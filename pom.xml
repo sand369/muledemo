@@ -36,9 +36,11 @@
 					<muleVersion>${mule.version}</muleVersion>
 					<username>sand_369</username>
 					<password>Sand_123</password>
+					<applicationName>muledemo</applicationName>
 					<workerType>Micro</workerType>
 					<redeploy>true</redeploy>
 					<environment>Sandbox</environment>
+					
 				</configuration>
 				<executions>
 					<execution>
