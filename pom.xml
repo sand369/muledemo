@@ -36,11 +36,10 @@
 					<muleVersion>${mule.version}</muleVersion>
 					<username>sand_369</username>
 					<password>Sand_123</password>
-					<applicationName>muledemo</applicationName>
 					<workerType>Micro</workerType>
 					<redeploy>true</redeploy>
 					<environment>Sandbox</environment>
-					
+
 				</configuration>
 				<executions>
 					<execution>
@@ -236,5 +235,5 @@
 			<id>nexus</id>
 			<url>http://172.21.10.77:8081/repository/lib-releases-local/</url>
 		</repository>
-	</distributionManagement> 
+	</distributionManagement>
 </project>
