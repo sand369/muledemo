@@ -32,13 +32,9 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>2.2.1</version>
 				<configuration>
-					<deploymentType>cloudhub</deploymentType>
+					<deploymentType>standalone</deploymentType>
 					<muleVersion>${mule.version}</muleVersion>
-					<username>sand_369</username>
-					<password>Sand_123</password>
-					<workerType>Micro</workerType>
-					<redeploy>true</redeploy>
-					<environment>Sandbox</environment>
+					<muleHome>C:/Users/ravi.sandrana/Desktop/Muel/mule-enterprise-standalone-3.9.1</muleHome>
 
 				</configuration>
 				<executions>
