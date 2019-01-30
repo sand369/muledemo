@@ -34,13 +34,13 @@
 				<version>2.2.1</version>
 				<configuration>
 					<deploymentType>cloudhub</deploymentType>
-					<muleVersion>${mule.version}</muleVersion>
+					<muleVersion>4.x</muleVersion>
 					<username>sand_369</username>
 					<password>Sand_123</password>
 					<workerType>Micro</workerType>
-					
-					<environment>Sandbox</environment>
 					<redeploy>true</redeploy>
+					<environment>Sandbox</environment>
+					
 				</configuration>
 				<executions>
 					<execution>
