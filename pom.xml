@@ -227,7 +227,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<!-- <distributionManagement>
+	 <distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
 			<url>http://172.21.10.77:8081/repository/lib-snapshot-local/</url>
@@ -236,5 +236,5 @@
 			<id>nexus</id>
 			<url>http://172.21.10.77:8081/repository/lib-releases-local/</url>
 		</repository>
-	</distributionManagement> -->
+	</distributionManagement> 
 </project>
