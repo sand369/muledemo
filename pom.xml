@@ -16,7 +16,7 @@
 		<munit.version>1.3.8</munit.version>
 		<mule.munit.support.version>3.9.1</mule.munit.support.version>
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -34,13 +34,13 @@
 				<version>2.2.1</version>
 				<configuration>
 					<deploymentType>cloudhub</deploymentType>
-					<muleVersion>4.x</muleVersion>
-					<username>sand_369</username>
+					<muleVersion>${mule.version}</muleVersion>
+					<username>sand_ganesh</username>
 					<password>Sand_123</password>
 					<workerType>Micro</workerType>
 					<redeploy>true</redeploy>
 					<environment>Sandbox</environment>
-					
+
 				</configuration>
 				<executions>
 					<execution>
@@ -227,7 +227,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	 <distributionManagement>
+	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
 			<url>http://172.21.10.77:8081/repository/lib-snapshot-local/</url>
@@ -236,5 +236,5 @@
 			<id>nexus</id>
 			<url>http://172.21.10.77:8081/repository/lib-releases-local/</url>
 		</repository>
-	</distributionManagement> 
+	</distributionManagement>
 </project>
