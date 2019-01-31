@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy Standalone') { 
       steps {
-        sh 'mvn deploy -P standalone'
+       C:/Program\ Files/Git/bin/sh 'mvn deploy -P standalone'
       }
     }
 }
