@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy Standalone') { 
       steps {
-      mvn deploy -P standalone
+      sh 'mvn deploy -P standalone'
       }
     }
 }
