@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Deploy Standalone') { 
       steps {
-      bat 'mvn deploy -P standalone'
+      def MVHome = tool name: 'Maven', type: 'maven'
+      bat "${MVHome}/bin/mvn deploy -P standalone"
       }
     }
 }
