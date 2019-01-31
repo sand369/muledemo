@@ -28,18 +28,15 @@
 					<copyToAppsDirectory>true</copyToAppsDirectory>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
+			 <plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>2.2.1</version>
 				<configuration>
-					<deploymentType>cloudhub</deploymentType>
-					<muleVersion>${mule.version}</muleVersion>
-					<username>sand_ganesh</username>
-					<password>Sand_123</password>
-					<workerType>Micro</workerType>
-					<redeploy>true</redeploy>
-					<environment>Sandbox</environment>
+					<deploymentType>standalone</deploymentType>
+							<muleVersion>${mule.version}</muleVersion>
+							<muleHome>C:/Users/ravi.sandrana/Desktop/Muel/mule-enterprise-standalone-3.9.1</muleHome>
+							<applicationName>${artifactId}</applicationName>
 
 			</configuration>
 				<executions>
@@ -51,7 +48,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin> 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -113,7 +110,7 @@
 			</testResource>
 		</testResources>
 	</build>
-  <profiles> 
+  <!-- <profiles> 
 		 <profile>
 			<id>standalone</id>
 			<build>
@@ -142,7 +139,7 @@
 				</plugins>
 			</build>
 		 </profile>
-		</profiles>
+		</profiles> -->
 	<!-- Mule Dependencies -->
 	<dependencies>
 		<!-- Xml configuration -->
