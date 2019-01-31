@@ -121,12 +121,13 @@
 					<plugin>
 						<groupId>org.mule.tools.maven</groupId>
 						<artifactId>mule-maven-plugin</artifactId>
+						<version>2.2.1</version>
 						<configuration>
 							<deploymentType>standalone</deploymentType>
 							<muleVersion>${mule.version}</muleVersion>
 							<muleHome>C:/Users/ravi.sandrana/Desktop/Muel/mule-enterprise-standalone-3.9.1</muleHome>
 							<applicationName>${artifactId}</applicationName>
-							<community>true</community>
+							
 						</configuration>
 						<executions>
 							<execution>
