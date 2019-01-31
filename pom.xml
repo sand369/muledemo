@@ -94,7 +94,6 @@
 				</executions>
 				<configuration>
 					<munitTest>mule-demo-test-suite.xml</munitTest>
-
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<failBuild>true</failBuild>
