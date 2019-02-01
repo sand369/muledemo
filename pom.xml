@@ -28,7 +28,7 @@
 					<copyToAppsDirectory>true</copyToAppsDirectory>
 				</configuration>
 			</plugin>
-			 <plugin>
+			 <!-- <plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>2.2.1</version>
@@ -48,7 +48,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> 
+			</plugin> --> 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -110,7 +110,7 @@
 			</testResource>
 		</testResources>
 	</build>
-  <!-- <profiles> 
+   <profiles> 
 		 <profile>
 			<id>standalone</id>
 			<build>
@@ -139,7 +139,7 @@
 				</plugins>
 			</build>
 		 </profile>
-		</profiles> -->
+		</profiles> 
 	<!-- Mule Dependencies -->
 	<dependencies>
 		<!-- Xml configuration -->
@@ -262,4 +262,5 @@
 			<url>http://172.21.10.77:8081/repository/lib-releases-local/</url>
 		</repository>
 	</distributionManagement>
+	
 </project>
