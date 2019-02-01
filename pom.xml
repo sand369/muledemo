@@ -28,27 +28,12 @@
 					<copyToAppsDirectory>true</copyToAppsDirectory>
 				</configuration>
 			</plugin>
-			 <!-- <plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>2.2.1</version>
-				<configuration>
-					<deploymentType>standalone</deploymentType>
-							<muleVersion>${mule.version}</muleVersion>
-							<muleHome>C:/Users/ravi.sandrana/Desktop/Muel/mule-enterprise-standalone-3.9.1</muleHome>
-							<applicationName>${artifactId}</applicationName>
-
-			</configuration>
-				<executions>
-					<execution>
-						<id>deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> --> 
+			<!-- <plugin> <groupId>org.mule.tools.maven</groupId> <artifactId>mule-maven-plugin</artifactId> 
+				<version>2.2.1</version> <configuration> <deploymentType>standalone</deploymentType> 
+				<muleVersion>${mule.version}</muleVersion> <muleHome>C:/Users/ravi.sandrana/Desktop/Muel/mule-enterprise-standalone-3.9.1</muleHome> 
+				<applicationName>${artifactId}</applicationName> </configuration> <executions> 
+				<execution> <id>deploy</id> <phase>deploy</phase> <goals> <goal>deploy</goal> 
+				</goals> </execution> </executions> </plugin> -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -110,8 +95,8 @@
 			</testResource>
 		</testResources>
 	</build>
-   <profiles> 
-		 <profile>
+	<profiles>
+		<profile>
 			<id>standalone</id>
 			<build>
 				<plugins>
@@ -124,7 +109,6 @@
 							<muleVersion>${mule.version}</muleVersion>
 							<muleHome>//172.21.10.79/mule-enterprise-standalone-3.9.1</muleHome>
 							<applicationName>${artifactId}</applicationName>
-							
 						</configuration>
 						<executions>
 							<execution>
@@ -138,8 +122,8 @@
 					</plugin>
 				</plugins>
 			</build>
-		 </profile>
-		</profiles> 
+		</profile>
+	</profiles>
 	<!-- Mule Dependencies -->
 	<dependencies>
 		<!-- Xml configuration -->
@@ -262,5 +246,5 @@
 			<url>http://172.21.10.77:8081/repository/lib-releases-local/</url>
 		</repository>
 	</distributionManagement>
-	
+
 </project>
