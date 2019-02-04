@@ -2,7 +2,8 @@ node {
 
 	def skipMunitTest = (params.SKIP_MUNIT_TEST != null && params.SKIP_MUNIT_TEST != false) || params.SKIP_MUNIT_TEST == true
 	boolean deployServer = (params.DEPLOYSERVER != null && params.DEPLOYSERVER != false) || params.DEPLOYSERVER == true || params.DEPLOYSERVER == null
-	def undeploy = (params.UNDEPLOY != null && params.UNDEPLOY == true)
+	//def undeploy = (params.UNDEPLOY != null && params.UNDEPLOY == true)
+	 def undeploy = 'true'
 	def startTime = new Date().format('yyyyMMddHH:mm:ss')
 	boolean deployRepository = (params.DEPLOY_REPOSITORY != null && params.DEPLOY_REPOSITORY != false) || params.DEPLOY_REPOSITORY == true || params.DEPLOY_REPOSITORY == null
 
@@ -29,7 +30,7 @@ node {
 	echo env.JAVA_HOME
 	bat 'java -version'
 
-	withMaven(jdk: 'JDK', maven: 'Maven', mavenSettingsConfig: '4f29c374-6c76-42ce-b847-93438555c4e9') {
+	withMaven(jdk: 'JDK', maven: 'Maven') {
 
 		if ("$MULE_ENVIRONEMENT" == 'TEST') {
 			if (!undeploy) {
