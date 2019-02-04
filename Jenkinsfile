@@ -6,8 +6,8 @@ node {
 	//def undeploy = (params.UNDEPLOY != null && params.UNDEPLOY == true)
 	def undeploy = 'true'
 	def startTime = new Date().format('yyyyMMddHH:mm:ss')
-	boolean deployRepository = (params.DEPLOY_REPOSITORY != null && params.DEPLOY_REPOSITORY != false) || params.DEPLOY_REPOSITORY == true || params.DEPLOY_REPOSITORY == null
-
+	//boolean deployRepository = (params.DEPLOY_REPOSITORY != null && params.DEPLOY_REPOSITORY != false) || params.DEPLOY_REPOSITORY == true || params.DEPLOY_REPOSITORY == null
+        boolean deployRepository = true
 
 	def CFL_BRANCH = 'master'
 
@@ -71,7 +71,7 @@ node {
 					//Global variables
 					def NEXUS_URL = 'http://172.21.10.77:8081/repository'
 					def NEXUS_REPOSITORY = 'lib-releases-local'
-					def NEXUS_REPOSITORYID = 'Nexus-CFL-Repository'
+					def NEXUS_REPOSITORYID = 'central'
 					def GROUP_ID = 'com.cfl.mule'
 
 					echo """Global variables:
