@@ -1,6 +1,7 @@
 node {
 
-	def skipMunitTest = (params.SKIP_MUNIT_TEST != null && params.SKIP_MUNIT_TEST != false) || params.SKIP_MUNIT_TEST == true
+	//def skipMunitTest = (params.SKIP_MUNIT_TEST != null && params.SKIP_MUNIT_TEST != false) || params.SKIP_MUNIT_TEST == true
+	def skipMunitTest = 'true'
 	boolean deployServer = (params.DEPLOYSERVER != null && params.DEPLOYSERVER != false) || params.DEPLOYSERVER == true || params.DEPLOYSERVER == null
 	//def undeploy = (params.UNDEPLOY != null && params.UNDEPLOY == true)
 	 def undeploy = 'true'
