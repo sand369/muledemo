@@ -146,13 +146,5 @@ node {
 	}
 	
 
-	def mysh(cmd) {
-		sh('#!/bin/sh -e\n' + cmd)
-
-	}
-
-	def version() {
-		def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
-		matcher ? matcher[0][1] : null
-	}
+	
 }
