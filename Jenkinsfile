@@ -24,7 +24,7 @@ node {
 		APP_VERSION = params.APP_VERSION
 	}
 
-	env.JAVA_HOME = "${tool 'JDK8'}"
+	env.JAVA_HOME = "${tool 'JDK'}"
 	env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
 	echo env.JAVA_HOME
 	sh 'java -version'
