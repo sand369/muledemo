@@ -1,10 +1,10 @@
 node {
 
 	//def skipMunitTest = (params.SKIP_MUNIT_TEST != null && params.SKIP_MUNIT_TEST != false) || params.SKIP_MUNIT_TEST == true
-	def skipMunitTest = 'true'
+	def skipMunitTest = 'false'
 	boolean deployServer = (params.DEPLOYSERVER != null && params.DEPLOYSERVER != false) || params.DEPLOYSERVER == true || params.DEPLOYSERVER == null
 	//def undeploy = (params.UNDEPLOY != null && params.UNDEPLOY == true)
-	 def undeploy = 'true'
+	 def undeploy = 'false'
 	def startTime = new Date().format('yyyyMMddHH:mm:ss')
 	boolean deployRepository = (params.DEPLOY_REPOSITORY != null && params.DEPLOY_REPOSITORY != false) || params.DEPLOY_REPOSITORY == true || params.DEPLOY_REPOSITORY == null
 
