@@ -27,7 +27,7 @@ node {
 	env.JAVA_HOME = "${tool 'JDK'}"
 	env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
 	echo env.JAVA_HOME
-	sh 'java -version'
+	bat 'java -version'
 
 	withMaven(jdk: 'JDK8', maven: 'CFLMaven', mavenSettingsConfig: '4f29c374-6c76-42ce-b847-93438555c4e9') {
 
