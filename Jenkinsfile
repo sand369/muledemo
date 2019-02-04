@@ -29,7 +29,7 @@ node {
 	echo env.JAVA_HOME
 	bat 'java -version'
 
-	withMaven(jdk: 'JDK8', maven: 'CFLMaven', mavenSettingsConfig: '4f29c374-6c76-42ce-b847-93438555c4e9') {
+	withMaven(jdk: 'JDK', maven: 'Maven', mavenSettingsConfig: '4f29c374-6c76-42ce-b847-93438555c4e9') {
 
 		if ("$MULE_ENVIRONEMENT" == 'TEST') {
 			if (!undeploy) {
