@@ -108,7 +108,7 @@ node {
 
 
 			} else {
-				withMaven(jdk: 'JDK8', maven: 'CFLMaven', mavenSettingsConfig: '1b13449a-122d-4f32-93ca-11eeda6fe7f1') {
+				withMaven(jdk: 'JDK', maven: 'Maven') {
 
 					withCredentials([usernamePassword(credentialsId: 'server', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
