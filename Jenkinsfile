@@ -4,7 +4,7 @@ node {
 	//def skipMunitTest = 'false'
 	boolean deployServer = (params.DEPLOYSERVER != null && params.DEPLOYSERVER != false) || params.DEPLOYSERVER == true || params.DEPLOYSERVER == null
 	def undeploy = (params.UNDEPLOY != null && params.UNDEPLOY == true)
-	 //def undeploy = 'true'
+	def undeploy = 'true'
 	def startTime = new Date().format('yyyyMMddHH:mm:ss')
 	boolean deployRepository = (params.DEPLOY_REPOSITORY != null && params.DEPLOY_REPOSITORY != false) || params.DEPLOY_REPOSITORY == true || params.DEPLOY_REPOSITORY == null
 
@@ -34,7 +34,7 @@ node {
 	withMaven(jdk: 'JDK', maven: 'Maven') {
 
 		if ("$MULE_ENVIRONEMENT" == 'TEST') {
-			if (!undeploy) {
+			//if (!undeploy) {
 
 				stage('GIT FETCH')
 
@@ -107,21 +107,7 @@ node {
 					}
 
 
-			} else {
-				withMaven(jdk: 'JDK', maven: 'Maven') {
-
-					withCredentials([usernamePassword(credentialsId: 'server', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-
-						stage('Undeploy') {
-
-								mysh "mvn clean mule:deploy -U -s $MAVEN_SETTINGS -Dmule.username=${USERNAME} -Dmule.password=${PASSWORD} -Dmule.applicationName=${MULE.APPLICATION.NAME} -Dmule.environment=${MULE.ENVIRONMENT} ${MULE.DEPLOY}"
-
-						}
-
-					}
-
-				}
-			}
+			
 		} 
 		else {
 			stage('Copy Artifact') {
