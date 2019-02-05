@@ -54,7 +54,7 @@ node {
 					def POM_VERSION = '1.0.0-SNAPSHOT'
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID-$POM_VERSION"
 					bat 'C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean package'
-					archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar'
+					archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.zip'
 					archiveArtifacts allowEmptyArchive: true, artifacts: 'pom.xml'
 				}
 
