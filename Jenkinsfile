@@ -54,7 +54,7 @@ node {
 					def POM_VERSION = '1.0.0-SNAPSHOT'
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID-$POM_VERSION"
 					bat 'C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean package'
-					archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar'
+					archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.zip'
 					archiveArtifacts allowEmptyArchive: true, artifacts: 'pom.xml'
 				}
 
@@ -88,7 +88,7 @@ node {
 					{
 						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId='lib-parent-pom' -Dversion=$POM_VERSION -Dpackaging=pom -Dfile=target/$INSTALL_FILE_NAME.pom -DgeneratePom=true"
 					} else {
-						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId=mule-demo -Dversion=$POM_VERSION -Dpackaging=zip -Dfile=target/mule-demo-1.0.0-SNAPSHOT.zip -DgeneratePom=true"
+						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId=mule-demo -Dversion=$POM_VERSION -Dpackaging=zip -Dfile=target/$INSTALL_FILE_NAME-$POM_VERSION.zip -DgeneratePom=true"
 
 					}
 
