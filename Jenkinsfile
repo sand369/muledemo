@@ -52,7 +52,7 @@ node {
 				}
 				stage('Package') {
 					def POM_VERSION = '1.0.0-SNAPSHOT'
-					def INSTALL_FILE_NAME = "mule-demo-$POM_VERSION"
+					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID-$POM_VERSION"
 					bat 'C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean package'
 					archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar'
 					archiveArtifacts allowEmptyArchive: true, artifacts: 'pom.xml'
@@ -73,6 +73,7 @@ node {
 					def NEXUS_REPOSITORY = 'lib-releases-local'
 					def NEXUS_REPOSITORYID = 'central'
 					def GROUP_ID = 'com.cfl.mule'
+					def POM_VERSION = '1.0.0-SNAPSHOT'
 
 					echo """Global variables:
 					Nexus URL : ${NEXUS_URL}
