@@ -68,7 +68,7 @@ node {
 
 				if (deployRepository) {
 
-					stage('Deploy To Nexus'){
+					stage('Deploy To Nexus')
 
 					//Global variables
 					def NEXUS_URL = 'http://172.21.10.77:8081/repository'
@@ -86,7 +86,7 @@ node {
 					Pom Group ID: ${GROUP_ID}
 					
 					"""
-					
+					{
 						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId=mule-demo -Dversion=$POM_VERSION -Dpackaging=zip -Dfile="target/mule-demo-1.0.0-SNAPSHOT.zip" -DgeneratePom=true"
 					}
 					
