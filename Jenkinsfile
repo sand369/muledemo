@@ -74,6 +74,7 @@ node {
 					def NEXUS_REPOSITORYID = 'central'
 					def GROUP_ID = 'com.cfl.mule'
 					def POM_VERSION = '1.0.0-SNAPSHOT'
+					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID-$POM_VERSION"
 
 					echo """Global variables:
 					Nexus URL : ${NEXUS_URL}
