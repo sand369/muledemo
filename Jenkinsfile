@@ -68,7 +68,7 @@ node {
 
 				if (deployRepository) {
 
-					stage('Deploy To Nexus')
+					stage('Deploy To Nexus'){
 
 					//Global variables
 					def NEXUS_URL = 'http://172.21.10.77:8081/repository'
@@ -77,7 +77,7 @@ node {
 					def GROUP_ID = 'com.cfl.mule'
 					def POM_VERSION = '1.0.0-SNAPSHOT'
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID"
-					//zip zip_file = "target/$INSTALL_FILE_NAME-$POM_VERSION.zip", archive: true
+					
                                         def zip_file = "target/"+$INSTALL_FILE_NAME+"-"+$POM_VERSION+".zip"
 					echo """Global variables:
 					Nexus URL : ${NEXUS_URL}
@@ -87,7 +87,7 @@ node {
 					"""
 					
 						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId=mule-demo -Dversion=$POM_VERSION -Dpackaging=zip -Dfile=$zip_file -DgeneratePom=true"
-
+					}
 					
 
 				}
