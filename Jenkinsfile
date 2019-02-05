@@ -94,16 +94,8 @@ node {
 
 				}
 				if (deployServer) {
-					stage('Deploy To CloudHub') {
-						env.APP_NAME = "${MULE_ENVIRONEMENT.toLowerCase()}-$MAVEN_ARTIFACTID"
-						def APPLICATION_NAME = "$APP_NAME-$APP_VERSION"
-						def PROPERTIES = app_properties()
-
-						//echo "output=$PROPERTIES"
-
-							withCredentials([usernamePassword(credentialsId: 'server', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-								sh "set +x"
-								mysh "mvn clean mule:deploy -U -s $MAVEN_SETTINGS -Dmule.username=${USERNAME} -Dmule.password=${PASSWORD} -Dmule.applicationName=${MULE.APPLICATION.NAME} -Dmule.environment=${MULE.ENVIRONMENT} ${MULE.DEPLOY}"
+					stage('Deploy To Standalone') {
+						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn -X deploy -P standalone"
 
 							}
 						}
