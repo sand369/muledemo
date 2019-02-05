@@ -71,7 +71,7 @@ node {
 					//Global variables
 					def NEXUS_URL = 'http://172.21.10.77:8081/repository'
 					def NEXUS_REPOSITORY = 'lib-snapshot-local'
-					def NEXUS_REPOSITORYID = 'central'
+					def NEXUS_REPOSITORYID = 'nexus'
 					def GROUP_ID = 'com.cfl.mule'
 					def POM_VERSION = '1.0.0-SNAPSHOT'
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID"
