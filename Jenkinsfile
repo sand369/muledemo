@@ -78,7 +78,7 @@ node {
 					def POM_VERSION = '1.0.0-SNAPSHOT'
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID"
 					
-                                        def zip_file = "target/$INSTALL_FILE_NAME-$POM_VERSION.zip"
+                                        //def zip_file = "target/$INSTALL_FILE_NAME-$POM_VERSION.zip"
 					echo """Global variables:
 					Nexus URL : ${NEXUS_URL}
 					Nexus Repository: ${NEXUS_REPOSITORY}
