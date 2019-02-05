@@ -109,6 +109,7 @@
 							<muleVersion>${mule.version}</muleVersion>
 							<muleHome>C:/Users/ravi.sandrana/Desktop/Muel/mule-enterprise-standalone-3.9.1</muleHome>
 							<applicationName>${artifactId}</applicationName>
+							<redeploy>true</redeploy>
 						</configuration>
 						<executions>
 							<execution>
