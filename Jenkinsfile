@@ -8,7 +8,7 @@ node {
 	def startTime = new Date().format('yyyyMMddHH:mm:ss')
 	//boolean deployRepository = (params.DEPLOY_REPOSITORY != null && params.DEPLOY_REPOSITORY != false) || params.DEPLOY_REPOSITORY == true || params.DEPLOY_REPOSITORY == null
         boolean deployRepository = true
-
+        def MAVEN_ARTIFACTID = 'mule-demo'
 	def CFL_BRANCH = 'master'
 
 	if (params.BRANCH != null) {
