@@ -87,7 +87,7 @@ node {
 					zip file: ${zip_file}
 					"""
 					
-						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId=mule-demo -Dversion=$POM_VERSION -Dpackaging=zip -Dfile=${zip_file} -DgeneratePom=true"
+						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy:deploy-file -Durl=${NEXUS_URL}/${NEXUS_REPOSITORY}/ -DrepositoryId=${NEXUS_REPOSITORYID} -DgroupId=${GROUP_ID} -DartifactId=${MAVEN_ARTIFACTID} -Dversion=$POM_VERSION -Dpackaging=zip -Dfile=${zip_file} -DgeneratePom=true"
 					}
 					
 
