@@ -48,7 +48,7 @@ node {
 				if (!skipMunitTest) {
 
 					stage('MUnit Testing') {
-						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean test -U"
+						bat "mvn clean test -U"
 					}
 
 				}
