@@ -104,25 +104,6 @@ node {
 			
 		} 
 		else {
-			stage('Copy Artifact') {
-				def PROJECT_NAME = 'build-test-$MAVEN_ARTIFACTID'
-				copyArtifacts filter: 'target/*.jar,pom.xml', fingerprintArtifacts: true, projectName: PROJECT_NAME, selector: lastSuccessful()
-			}
-			
-			stage('Deploy To CloudHub') {
-				def POM_VERSION = version()
-				def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID-$POM_VERSION"
-				env.APP_NAME = "${MULE_ENVIRONEMENT.toLowerCase()}-$MAVEN_ARTIFACTID"
-				def APPLICATION_NAME = "$APP_NAME-$APP_VERSION"
-				def PROPERTIES = app_properties()
-				
-				
-					withCredentials([usernamePassword(credentialsId: 'server', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-						sh "set +x"
-						mysh "mvn mule:deploy -P cloudHub -Dmule.artifact='target//$INSTALL_FILE_NAME-mule-application.jar' $MULE_DEPLOY -DexecutionPhase=deploy -DexecutionId=deploy -Dmule.uri=https://anypoint.mulesoft.com -Dmaven.test.skip=true -DskipMunitTests -Dmule.username=$USERNAME -Dmule.password=$PASSWORD  -Dmule.environment=$MULE_ENVIRONEMENT -Dmule.applicationName=$APPLICATION_NAME -Dbusiness.group.client.id=$CLIENT_ID -Dbusiness.group.client.secret=$CLIENT_SECRET $PROPERTIES"
-						
-					}
-				}
 			}
 		
 	}
