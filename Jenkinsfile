@@ -48,8 +48,11 @@ node {
 				if (!skipMunitTest) {
 					
 					stage('MUnit Testing') {
+						try{
 						def err=''
 						bat "mvn clean test -U"
+						} 
+						catch (err) {}
 					
 					}
 
