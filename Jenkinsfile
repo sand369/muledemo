@@ -46,9 +46,13 @@ node {
 				}
 
 				if (!skipMunitTest) {
-
+					try{
 					stage('MUnit Testing') {
 						bat "mvn clean test -U"
+					}
+						catch(err){
+							mailtext body: 'Build Failed', subject: 'Build Status', to: 'sravi369.bin@gmail.com'
+						}
 					}
 
 				}
