@@ -51,7 +51,7 @@ node {
 						def err=''
 						bat "mvn clean test -U"
 					}
-						catch(Exception e) {
+						catch (e) {
 							mailtext body: 'Build Failed', subject: 'Build Status', to: 'sravi369.bin@gmail.com'
 						}
 					}
