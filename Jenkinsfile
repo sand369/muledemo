@@ -54,7 +54,7 @@ node {
 						} 
 						catch (err) 
 						{
-						 mailtext body: 'Build Failed', subject: 'Build Status', to: 'sravi369.bin@gmail.com'
+						 emailext body: 'Build Failed', subject: 'Build Status', to: 'sravi369.bin@gmail.com'
 						}
 					
 					}
