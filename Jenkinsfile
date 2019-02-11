@@ -11,7 +11,7 @@ node {
 	boolean deployServer = true
 	
         def MAVEN_ARTIFACTID = 'mule-demo'
-	def git_id = 'muledemo'
+	def git_id = 'https://github.com/sand369/'${MAVEN_ARTIFACTID}'.git'
 	def CFL_BRANCH = 'master'
 
 	if (params.BRANCH != null) {
@@ -42,7 +42,7 @@ node {
 				stage('GIT FETCH')
 
 				{
-					git credentialsId: 'sand369', url: 'https://github.com/sand369/'${git_id}'.git', branch: CFL_BRANCH
+					git credentialsId: 'sand369', url: git_id, branch: CFL_BRANCH
 
 				}
 
