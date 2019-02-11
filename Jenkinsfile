@@ -42,7 +42,7 @@ node {
 				stage('GIT FETCH')
 
 				{
-					git credentialsId: 'sand369', url: 'https://github.com/sand369/${git_id}.git', branch: CFL_BRANCH
+					git credentialsId: 'sand369', url: 'https://github.com/sand369/'${git_id}'.git', branch: CFL_BRANCH
 
 				}
 
