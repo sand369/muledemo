@@ -11,6 +11,7 @@ node {
 	boolean deployServer = true
 	
         def MAVEN_ARTIFACTID = 'mule-demo'
+	def git_id = "https://github.com/sand369/${MAVEN_ARTIFACTID}.git"
 	def CFL_BRANCH = 'master'
 
 	if (params.BRANCH != null) {
@@ -41,14 +42,22 @@ node {
 				stage('GIT FETCH')
 
 				{
-					git credentialsId: 'sand369', url: 'https://github.com/sand369/muledemo.git', branch: CFL_BRANCH
+					git credentialsId: 'sand369', url: git_id, branch: CFL_BRANCH
 
 				}
 
 				if (!skipMunitTest) {
-
+					
 					stage('MUnit Testing') {
+						try{
+						def err=''
 						bat "mvn clean test -U"
+						} 
+						catch (err) 
+						{
+						 emailext body: 'Build Failed', subject: 'Build Status', to: 'sravi369.bin@gmail.com'
+						}
+					
 					}
 
 				}
