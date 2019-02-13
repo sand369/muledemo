@@ -6,9 +6,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8051" doc:name="HTTP Listener Configuration"/>
     <flow name="muledemoFlow">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
+        <http:listener config-ref="HTTP_Listener_mule-domain-cfl" path="/" doc:name="HTTP"/>
         <set-payload value="#['Hai']" doc:name="Set Payload"/>
     </flow>
 </mule>
