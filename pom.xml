@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cfl.mule</groupId>
 	<artifactId>mule-demo</artifactId>
@@ -24,13 +25,13 @@
 				<extensions>true</extensions>
 				<configuration>
 					<copyToAppsDirectory>true</copyToAppsDirectory>
-				<inclusions>
-                        <inclusion>
-                            <groupId>com.mulesoft.security</groupId>
-                            <artifactId>mule-module-security-property-placeholder</artifactId>
-                        </inclusion>
-                    </inclusions>
-                </configuration>
+					<inclusions>
+						<inclusion>
+							<groupId>com.mulesoft.security</groupId>
+							<artifactId>mule-module-security-property-placeholder</artifactId>
+						</inclusion>
+					</inclusions>
+				</configuration>
 			</plugin>
 			<!-- <plugin> <groupId>org.mule.tools.maven</groupId> <artifactId>mule-maven-plugin</artifactId> 
 				<version>2.2.1</version> <configuration> <deploymentType>standalone</deploymentType> 
@@ -214,32 +215,32 @@
 			<version>${munit.version}</version>
 			<scope>test</scope>
 		</dependency>
-	<dependency>
-            <groupId>com.cfl.mule</groupId>
-            <artifactId>cfl-mule-domain-project</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>test</scope>
-            <type>zip</type>
-        </dependency>
-    <dependency>
-            <groupId>com.mulesoft.security</groupId>
-            <artifactId>mule-module-security-property-placeholder</artifactId>
-            <version>1.7.3</version>
-        </dependency>
-    <dependency>
-            <groupId>cc568b69-a181-4d4c-b044-90054c52897b</groupId>
-            <artifactId>json-logger-module</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        
-        <dependency>
-                 <groupId>com.cfl.mule</groupId>
-                 <artifactId>cfl-mule-domain-project-ce</artifactId>
-                 <version>1.0.0</version>
-                 <scope>test</scope>
-                 <type>zip</type>
-           </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.cfl.mule</groupId>
+			<artifactId>cfl-mule-domain-project</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>test</scope>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.security</groupId>
+			<artifactId>mule-module-security-property-placeholder</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+		<dependency>
+			<groupId>cc568b69-a181-4d4c-b044-90054c52897b</groupId>
+			<artifactId>json-logger-module</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.cfl.mule</groupId>
+			<artifactId>cfl-mule-domain-project-ce</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+			<type>zip</type>
+		</dependency>
+	</dependencies>
 	<repositories>
 		<repository>
 			<id>Central</id>
@@ -253,12 +254,12 @@
 			<url>http://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
-	<repository>
-            <id>Exchange2</id>
-            <name>Exchange2 Repository</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/cc568b69-a181-4d4c-b044-90054c52897b/maven</url>
-        </repository>
-    </repositories>
+		<repository>
+			<id>Exchange2</id>
+			<name>Exchange2 Repository</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v1/organizations/cc568b69-a181-4d4c-b044-90054c52897b/maven</url>
+		</repository>
+	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-release</id>
