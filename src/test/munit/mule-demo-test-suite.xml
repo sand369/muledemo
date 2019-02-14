@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
         <spring:import resource="classpath:muledemo.xml"/>
     </spring:beans>
     <munit:test name="muledemo-test-suite-muledemoFlowTest" description="Test">
-        <flow-ref name="muledemoFlow" doc:name="Flow-ref to muledemoFlow"/>
+        <flow-ref name="muledemoFlow" doc:name="muledemoFlow"/>
         <munit:assert-on-equals expectedValue="#['Hai']" actualValue="#[payload]" doc:name="Assert Equals"/>
     </munit:test>
 </mule>
