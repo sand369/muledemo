@@ -3,4 +3,5 @@
     <name>mule-demo</name>
     <description></description>
     <muleExtension name="JSON Logger" qualifier="org.mule.tooling.ui.contribution.json-logger.3.5.0"/>
+    <muleExtension name="Secure Property Placeholder" qualifier="org.mule.tooling.ui.contribution.secure-property-placeholder.3.9.0"/>
 </mule-project>
