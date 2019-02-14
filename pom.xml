@@ -232,14 +232,7 @@
 			<artifactId>json-logger-module</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.cfl.mule</groupId>
-			<artifactId>cfl-mule-domain-project</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-			<type>zip</type>
-		</dependency>
-	</dependencies>
+			</dependencies>
 	<repositories>
 		<repository>
 			<id>Central</id>
