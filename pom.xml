@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cfl.mule</groupId>
 	<artifactId>mule-demo</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>mule</packaging>
 	<name>Mule mule-demo Application</name>
 	<properties>
