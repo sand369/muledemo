@@ -235,7 +235,7 @@
 
 		<dependency>
 			<groupId>com.cfl.mule</groupId>
-			<artifactId>cfl-mule-domain-project-ce</artifactId>
+			<artifactId>cfl-mule-domain-project</artifactId>
 			<version>1.0.0</version>
 			<scope>test</scope>
 			<type>zip</type>

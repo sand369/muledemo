@@ -102,13 +102,18 @@
 			<attribute name="org.mule.tooling.scope" value="test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar">
+		<attributes>
+			<attribute name="org.mule.tooling.scope" value="test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/okhttp/3.9.0/okhttp-3.9.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/squareup/okio/okio/1.13.0/okio-1.13.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/mulesoft/security/security-api/1.7.3/security-api-1.7.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/mulesoft/security/security-api/1.6.0/security-api-1.6.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar"/>
 	<classpathentry kind="var" path="M2_REPO/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar">
