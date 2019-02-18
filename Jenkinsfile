@@ -51,7 +51,7 @@ node {
 					stage('MUnit Testing') {
 						try{
 						def err=''
-						bat bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean test -Dmule.env=local -Dvault.key=capitalfirst@123 -Denv.properties.location=/C:/MuleSOft/conf"
+						bat bat "mvn clean test -U"
 						} 
 						catch (err) 
 						{
