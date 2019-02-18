@@ -16,6 +16,28 @@
             <SizeBasedTriggeringPolicy size="10 MB" />
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
+		<Socket name="SOCKET-SPLUNK" host="192.168.1.13" port="8099" protocol="TCP">
+             <PatternLayout pattern="[%d{MM-dd HH:mm:ss.SSS}] %-5p %c{1} [%t]: %m%n"/>
+         </Socket>
+         <!-- <Log4J2CloudhubLogAppender name="CLOUDHUB"
+                                    addressProvider="com.mulesoft.ch.logging.DefaultAggregatorAddressProvider"
+                                    applicationContext="com.mulesoft.ch.logging.DefaultApplicationContext"
+                                    appendRetryIntervalMs="${sys:logging.appendRetryInterval}"
+                                    appendMaxAttempts="${sys:logging.appendMaxAttempts}"
+                                    batchSendIntervalMs="${sys:logging.batchSendInterval}"
+                                    batchMaxRecords="${sys:logging.batchMaxRecords}"
+                                    memBufferMaxSize="${sys:logging.memBufferMaxSize}"
+                                    journalMaxWriteBatchSize="${sys:logging.journalMaxBatchSize}"
+                                    journalMaxFileSize="${sys:logging.journalMaxFileSize}"
+                                    clientMaxPacketSize="${sys:logging.clientMaxPacketSize}"
+                                    clientConnectTimeoutMs="${sys:logging.clientConnectTimeout}"
+                                    clientSocketTimeoutMs="${sys:logging.clientSocketTimeout}"
+                                    serverAddressPollIntervalMs="${sys:logging.serverAddressPollInterval}"
+                                    serverHeartbeatSendIntervalMs="${sys:logging.serverHeartbeatSendIntervalMs}"
+                                    statisticsPrintIntervalMs="${sys:logging.statisticsPrintIntervalMs}">
+
+             <PatternLayout pattern="[%d{MM-dd HH:mm:ss}] %-5p %c{1} [%t] CUSTOM: %m%n"/>
+         </Log4J2CloudhubLogAppender> -->
     </Appenders>
     <Loggers>
     	
@@ -46,5 +68,8 @@
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />
         </AsyncRoot>
+		<AsyncLogger name="splunk.logger" level="INFO">
+		   <AppenderRef ref="SOCKET-SPLUNK" />
+		</AsyncLogger>
     </Loggers>
 </Configuration>
