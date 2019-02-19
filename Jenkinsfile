@@ -51,7 +51,7 @@ node {
 					stage('MUnit Testing') {
 						try{
 						def err=''
-						bat "mvn clean test -U"
+						bat bat "mvn clean test -U"
 						} 
 						catch (err) 
 						{
