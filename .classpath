@@ -50,7 +50,7 @@
       <attribute value="test" name="org.mule.tooling.scope"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/com/mulesoft/security/mule-module-security-property-placeholder/1.7.3/mule-module-security-property-placeholder-1.7.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/mulesoft/security/mule-module-security-property-placeholder/1.6.5/mule-module-security-property-placeholder-1.6.5.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/mulesoft/munit/mule-munit-support/3.9.1/mule-munit-support-3.9.1.jar">
     <attributes>
       <attribute value="test" name="org.mule.tooling.scope"/>
@@ -82,7 +82,7 @@
   <classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/mulesoft/security/security-api/1.7.3/security-api-1.7.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/mulesoft/security/security-api/1.6.5/security-api-1.6.5.jar"/>
   <classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar"/>
   <classpathentry kind="var" path="M2_REPO/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar">

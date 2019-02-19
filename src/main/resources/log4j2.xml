@@ -16,7 +16,7 @@
             <SizeBasedTriggeringPolicy size="10 MB" />
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-		<Socket name="SOCKET-SPLUNK" host="192.168.1.13" port="8099" protocol="TCP">
+		<Socket name="SOCKET-SPLUNK" host="0.0.0.0" port="5601" >
              <PatternLayout pattern="[%d{MM-dd HH:mm:ss.SSS}] %-5p %c{1} [%t]: %m%n"/>
          </Socket>
          <!-- <Log4J2CloudhubLogAppender name="CLOUDHUB"
