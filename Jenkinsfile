@@ -109,7 +109,7 @@ node {
 						}
 			      stage('Copy Artifact') 
   {
-      def PROJECT_NAME = "$MAVEN_ARTIFACTID"
+      def PROJECT_NAME = 'mule-demo'
       copyArtifacts filter: 'target/*.zip,pom.xml', fingerprintArtifacts: true, projectName: PROJECT_NAME, selector: lastSuccessful()
   }
 					
