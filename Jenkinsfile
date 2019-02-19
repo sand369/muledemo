@@ -109,8 +109,8 @@ node {
 						}
 			      stage('Copy Artifact') 
   {
-	def PROJECT_NAME = "$MAVEN_ARTIFACTID"
-	copyArtifacts filter: 'target/*.zip', fingerprintArtifacts: true, projectName: PROJECT_NAME
+      def PROJECT_NAME = "$MAVEN_ARTIFACTID"
+      copyArtifacts filter: 'target/*.zip', fingerprintArtifacts: true, projectName: PROJECT_NAME
   }
 					
 
