@@ -115,7 +115,7 @@ node {
 					project-name : ${PROJECT_NAME}
 					"""
       
-      copyArtifacts filter: 'target/*.zip,pom.xml', fingerprintArtifacts: true, projectName: PROJECT_NAME, selector: lastSuccessful()
+      copyArtifacts filter: 'target/*.zip,pom.xml', fingerprintArtifacts: true, projectName: 'mule-demo', selector: lastSuccessful()
   }
 					
 
