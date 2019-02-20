@@ -109,7 +109,7 @@ node {
 						}
 			      stage('Copy Artifact') 
   {
-      def PROJECT_NAME = 'jenkins-pipeline'
+      def PROJECT_NAME = 'mule-demo'
       
       echo """Global variables:
 					project-name : ${PROJECT_NAME}
