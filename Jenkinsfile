@@ -51,7 +51,7 @@ node {
 					stage('MUnit Testing') {
 						try{
 						def err=''
-						bat "mvn clean test -U"
+						bat "mvn clean test -U -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
 						} 
 						catch (err) 
 						{
@@ -103,24 +103,11 @@ node {
 				}
 				if (deployServer) {
 					stage('Deploy To Standalone') {
-						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone"
+						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
 
 							}
 						}
-			        stage('Copy Artifact') 
-                        {
-                          def PROJECT_NAME = 'mule-demo'
-      
-                           echo """Global variables:
-					       project-name : ${PROJECT_NAME}
-					       """
-      
-                          copyArtifacts filter: 'target/*.zip,pom.xml', fingerprintArtifacts: true, projectName: PROJECT_NAME, selector: lastSuccessful()
-                        }
-                        stage('Deploy To PROD') 
-                        {
-bat "mvn mule:deploy -P standalone -Dmule.artifact='target//mule-demo.zip' -DexecutionPhase=deploy -DexecutionId=deploy -Dmaven.test.skip=true -DskipMunitTests  -Dmule.applicationName='mule-demo'"
-}
+			        
 
 			
 		} 
