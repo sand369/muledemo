@@ -117,6 +117,10 @@ node {
       
                           copyArtifacts filter: 'target/*.zip,pom.xml', fingerprintArtifacts: true, projectName: PROJECT_NAME, selector: lastSuccessful()
                         }
+                        stage('Deploy To PROD') 
+                        {
+bat "mvn mule:deploy -P cloudHub -Dmule.artifact='target//mule-demo.zip' -DexecutionPhase=deploy -DexecutionId=deploy -Dmaven.test.skip=true -DskipMunitTests  -Dmule.applicationName='mule-demo'"
+}
 
 			
 		} 
