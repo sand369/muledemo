@@ -107,18 +107,7 @@ node {
 
 							}
 						}
-			      stage('Copy Artifact') 
-  {
-      def PROJECT_NAME = 'mule-demo'
-      
-      echo """Global variables:
-					project-name : ${PROJECT_NAME}
-					"""
-      
-      copyArtifacts filter: 'target/*.zip,pom.xml', fingerprintArtifacts: true, projectName: PROJECT_NAME
-  }
-					
-
+			      
 
 			
 		} 
