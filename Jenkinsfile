@@ -119,7 +119,7 @@ node {
                         }
                         stage('Deploy To PROD') 
                         {
-bat "mvn mule:deploy -P cloudHub -Dmule.artifact='target//mule-demo.zip' -DexecutionPhase=deploy -DexecutionId=deploy -Dmaven.test.skip=true -DskipMunitTests  -Dmule.applicationName='mule-demo'"
+bat "mvn mule:deploy -P standalone -Dmule.artifact='target//mule-demo.zip' -DexecutionPhase=deploy -DexecutionId=deploy -Dmaven.test.skip=true -DskipMunitTests  -Dmule.applicationName='mule-demo'"
 }
 
 			
