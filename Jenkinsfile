@@ -34,7 +34,7 @@ node {
 	echo env.JAVA_HOME
 	bat 'java -version'
 	
-	
+	print "DEBUG: parameter bar = ${mule.env}"
 
 	withMaven(jdk: 'JDK', maven: 'Maven') {
 
@@ -53,7 +53,6 @@ node {
 					stage('MUnit Testing') {
 						try{
 						def err=''
-						print "DEBUG: parameter bar = ${mule.env}"
 						bat "mvn clean test -U -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
 						} 
 						catch (err) 
