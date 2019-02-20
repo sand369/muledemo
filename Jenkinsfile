@@ -34,7 +34,7 @@ node {
 	echo env.JAVA_HOME
 	bat 'java -version'
 	
-	echo "DEBUG: parameter bar ="
+	echo "DEBUG: parameter bar =${params.mule.env}"
 
 	withMaven(jdk: 'JDK', maven: 'Maven') {
 
