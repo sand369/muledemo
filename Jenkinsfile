@@ -51,12 +51,7 @@ node {
 				if (!skipMunitTest) {
 					
 					stage('MUnit Testing') {
-					echo """Global variables:
-					mule env : "${mule.env}"
-					location: "${env.properties.location}"
-					key : "${vault.key}"
-					
-					"""
+					print "DEBUG: parameter bar = ${mule.env}"
 					
 						try{
 						def err=''
