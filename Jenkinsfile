@@ -33,6 +33,8 @@ node {
 	env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
 	echo env.JAVA_HOME
 	bat 'java -version'
+	
+	
 
 	withMaven(jdk: 'JDK', maven: 'Maven') {
 
@@ -49,6 +51,13 @@ node {
 				if (!skipMunitTest) {
 					
 					stage('MUnit Testing') {
+					echo """ variables:
+					mule env : ${mule.env}
+					location: ${env.properties.location}
+					key : ${vault.key}
+					
+					"""
+					
 						try{
 						def err=''
 						bat "mvn clean test -U -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
