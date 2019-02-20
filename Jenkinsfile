@@ -52,9 +52,9 @@ node {
 					
 					stage('MUnit Testing') {
 					echo """Global variables:
-					mule env : ${mule.env}
-					location: ${env.properties.location}
-					key : ${vault.key}
+					mule env : "${mule.env}"
+					location: "${env.properties.location}"
+					key : "${vault.key}"
 					
 					"""
 					
