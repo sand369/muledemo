@@ -51,7 +51,7 @@ node {
 				if (!skipMunitTest) {
 					
 					stage('MUnit Testing') {
-					echo """ variables:
+					echo """Global variables:
 					mule env : ${mule.env}
 					location: ${env.properties.location}
 					key : ${vault.key}
