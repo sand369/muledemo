@@ -51,10 +51,9 @@ node {
 				if (!skipMunitTest) {
 					
 					stage('MUnit Testing') {
-					print "DEBUG: parameter bar = ${mule.env}"
-					
 						try{
 						def err=''
+						print "DEBUG: parameter bar = ${mule.env}"
 						bat "mvn clean test -U -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
 						} 
 						catch (err) 
