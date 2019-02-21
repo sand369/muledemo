@@ -13,6 +13,14 @@ node {
         def MAVEN_ARTIFACTID = 'mule-demo'
 	//def git_id = "https://github.com/sand369/${MAVEN_ARTIFACTID}.git"
 	def CFL_BRANCH = 'master'
+	
+	def MULE_ENV = params.MULE_ENV
+                def ENV_PROPERTIES_LOCATION = params.ENV_PROPERTIES_LOCATION
+                def VAULT_KEY = params.VAULT_KEY
+                echo params.MULE_ENV
+      echo params.ENV_PROPERTIES_LOCATION
+                echo params.VAULT_KEY
+
 
 	if (params.BRANCH != null) {
 		CFL_BRANCH = params.BRANCH
@@ -34,7 +42,7 @@ node {
 	echo env.JAVA_HOME
 	bat 'java -version'
 	
-	print "DEBUG: parameter bar = ${mule.env}"
+	//echo "DEBUG: parameter bar =${mule.env}"
 
 	withMaven(jdk: 'JDK', maven: 'Maven') {
 
@@ -51,14 +59,9 @@ node {
 				if (!skipMunitTest) {
 					
 					stage('MUnit Testing') {
-						try{
-						def err=''
-						bat "mvn clean test -U -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
-						} 
-						catch (err) 
-						{
-						 emailext body: 'Build Failed', subject: 'Build Status', to: 'sravi369.bin@gmail.com'
-						}
+						
+						bat "mvn clean test -U -Dmule.env=$MULE_ENV -Denv.properties.location=$ENV_PROPERTIES_LOCATION -Dvault.key=$VAULT_KEY"
+						
 					
 					}
 
@@ -105,7 +108,7 @@ node {
 				}
 				if (deployServer) {
 					stage('Deploy To Standalone') {
-						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone -Dmule.env=local -Denv.properties.location=/C:/MuleSOft/conf -Dvault.key=capitalfirst@123"
+						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone -Dmule.env=$MULE_ENV -Denv.properties.location=$ENV_PROPERTIES_LOCATION -Dvault.key=$VAULT_KEY"
 
 							}
 						}
