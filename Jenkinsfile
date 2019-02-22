@@ -60,7 +60,8 @@ node {
 					
 					stage('MUnit Testing') {
 						
-						bat "mvn clean test -U -Dmule.env=$MULE_ENV -Denv.properties.location=$ENV_PROPERTIES_LOCATION -Dvault.key=$VAULT_KEY"
+						//bat "mvn clean test -U -Dmule.env=$MULE_ENV -Denv.properties.location=$ENV_PROPERTIES_LOCATION -Dvault.key=$VAULT_KEY"
+						bat "mvn clean test -U"
 						
 					
 					}
@@ -108,8 +109,8 @@ node {
 				}
 				if (deployServer) {
 					stage('Deploy To Standalone') {
-						bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone -Dmule.env=$MULE_ENV -Denv.properties.location=$ENV_PROPERTIES_LOCATION -Dvault.key=$VAULT_KEY"
-
+						//bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone -Dmule.env=$MULE_ENV -Denv.properties.location=$ENV_PROPERTIES_LOCATION -Dvault.key=$VAULT_KEY"
+                        bat "C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn deploy -P standalone"
 							}
 						}
 			        
