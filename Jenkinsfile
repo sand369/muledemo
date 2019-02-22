@@ -10,7 +10,7 @@ node {
         boolean deployRepository = true
 	boolean deployServer = true
 	
-        def MAVEN_ARTIFACTID = 'mule-demo'
+        def MAVEN_ARTIFACTID = params.MAVEN_ARTIFACTID
 	//def git_id = "https://github.com/sand369/${MAVEN_ARTIFACTID}.git"
 	def CFL_BRANCH = 'master'
 	
