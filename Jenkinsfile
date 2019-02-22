@@ -10,7 +10,9 @@ node {
         boolean deployRepository = true
 	boolean deployServer = true
 	
-        def MAVEN_ARTIFACTID = params.MAVEN_ARTIFACTID
+        //def MAVEN_ARTIFACTID = params.MAVEN_ARTIFACTID
+        def MAVEN_ARTIFACTID = artifactid()
+        echo MAVEN_ARTIFACTID
 	//def git_id = "https://github.com/sand369/${MAVEN_ARTIFACTID}.git"
 	def CFL_BRANCH = 'master'
 	
@@ -68,7 +70,7 @@ node {
 
 				}
 				stage('Package') {
-					def POM_VERSION = '1.0.0-SNAPSHOT'
+					def POM_VERSION = version()
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID-$POM_VERSION"
 					bat 'C:/MuleSOft/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean package -DskipMunitTests'
 					archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.zip'
@@ -90,7 +92,7 @@ node {
 					def NEXUS_REPOSITORY = 'lib-snapshot-local'
 					def NEXUS_REPOSITORYID = 'nexus'
 					def GROUP_ID = 'com.cfl.mule'
-					def POM_VERSION = '1.0.0-SNAPSHOT'
+					def POM_VERSION = version()
 					def INSTALL_FILE_NAME = "$MAVEN_ARTIFACTID"
 					
 				        def zip_file = "target/${INSTALL_FILE_NAME}-${POM_VERSION}.zip"
@@ -138,4 +140,11 @@ bat "mvn mule:deploy -P standalone -Dmule.artifact='target//mule-demo.zip' -Dmul
 	
 
 	}
-
+def version() {
+		def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+		matcher ? matcher[0][1] : null
+	}
+	def artifactid() {
+		def matcher = readFile('pom.xml') =~ '<artifactId>(.+)</artifactId>'
+		matcher ? matcher[0][1] : null
+	}
