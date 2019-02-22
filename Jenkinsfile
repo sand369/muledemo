@@ -26,8 +26,8 @@ node {
 		CFL_BRANCH = params.BRANCH
 	}
 
-	def MULE_ENVIRONEMENT = 'TEST'
-
+	def MULE_ENVIRONEMENT = params.MULE_ENVIRONEMENT
+      echo params.MULE_ENVIRONEMENT
 	if (params.MULE_ENVIRONEMENT != null) {
 		MULE_ENVIRONEMENT = params.MULE_ENVIRONEMENT
 	}
@@ -46,7 +46,7 @@ node {
 
 	withMaven(jdk: 'JDK', maven: 'Maven') {
 
-		if ("$MULE_ENVIRONEMENT" == 'TEST') {
+		if ("$MULE_ENVIRONEMENT" == 'uat') {
 			//if (!undeploy) {
 
 				stage('GIT FETCH')
@@ -114,9 +114,12 @@ node {
 							}
 						}
 			        
-stage('Copy Artifact') 
+	
+		} 
+		else {
+		stage('Copy Artifact') 
                         {
-                          def PROJECT_NAME = 'mule-demo'
+                          def PROJECT_NAME = "$MAVEN_ARTIFACTID"
       
                            echo """Global variables:
 					       project-name : ${PROJECT_NAME}
@@ -128,9 +131,7 @@ stage('Copy Artifact')
                         {
 bat "mvn mule:deploy -P standalone -Dmule.artifact='target//mule-demo.zip' -Dmule.applicationName='mule-demo'"
 }
-			
-		} 
-		else {
+		
 			}
 		
 	}
