@@ -4,4 +4,7 @@
     <description></description>
     <muleExtension name="JSON Logger" qualifier="org.mule.tooling.ui.contribution.json-logger.3.5.0"/>
     <muleExtension name="Secure Property Placeholder" qualifier="org.mule.tooling.ui.contribution.secure-property-placeholder.3.9.0"/>
+    <muleExtension name="Salesforce" qualifier="org.mule.tooling.ui.contribution.sfdc.3.5.0"/>
+    <muleExtension name="Connectordemo" qualifier="org.mule.tooling.ui.contribution.connectordemo.3.5.0"/>
+    <muleExtension name="Anypoint MQ" qualifier="org.mule.tooling.messaging.contribution"/>
 </mule-project>

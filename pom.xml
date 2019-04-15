@@ -30,7 +30,19 @@
 							<groupId>com.mulesoft.security</groupId>
 							<artifactId>mule-module-security-property-placeholder</artifactId>
 						</inclusion>
-					</inclusions>
+					<inclusion>
+                            <groupId>org.mule.modules</groupId>
+                            <artifactId>mule-module-sfdc</artifactId>
+                        </inclusion>
+                    <inclusion>
+                            <groupId>org.mule.modules</groupId>
+                            <artifactId>connectordemo-connector</artifactId>
+                        </inclusion>
+                    <inclusion>
+                            <groupId>com.mulesoft.muleesb.modules</groupId>
+                            <artifactId>mule-module-anypoint-mq-ee</artifactId>
+                        </inclusion>
+                    </inclusions>
 				</configuration>
 			</plugin>
 			<!-- <plugin> <groupId>org.mule.tools.maven</groupId> <artifactId>mule-maven-plugin</artifactId> 
@@ -245,6 +257,45 @@
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
+    <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-sfdc</artifactId>
+            <version>8.6.0</version>
+        </dependency>
+    <dependency>
+            <groupId>com.mulesoft.weave</groupId>
+            <artifactId>mule-plugin-weave</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-email</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-db</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>connectordemo-connector</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    <dependency>
+            <groupId>com.mulesoft.muleesb.modules</groupId>
+            <artifactId>mule-module-anypoint-mq-ee</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-jms</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 	<repositories>
 		<repository>
@@ -264,7 +315,16 @@
 			<name>Exchange2 Repository</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v1/organizations/cc568b69-a181-4d4c-b044-90054c52897b/maven</url>
 		</repository>
-	</repositories>
+	<repository>
+            <id>mule-ee-releases</id>
+            <name>MuleEE Releases Repository</name>
+            <url>https://repository-master.mulesoft.org/nexus/content/repositories/releases-ee/</url>
+        </repository>
+    <repository>
+            <id>nexus</id>
+            <url>http://172.21.10.77:8081/repository/lib-snapshot-local/</url>
+        </repository>
+    </repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-release</id>
