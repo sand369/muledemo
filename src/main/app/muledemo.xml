@@ -9,8 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/secure-property-placeholder http://www.mulesoft.org/schema/mule/secure-property-placeholder/current/mule-secure-property-placeholder.xsd
 http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
 http://www.mulesoft.org/schema/mule/connectordemo http://www.mulesoft.org/schema/mule/connectordemo/current/mule-connectordemo.xsd">
-    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8046" doc:name="HTTP Listener Configuration"/>
-    <connectordemo:config name="Connectordemo__DatabaseConfiguration" doc:name="Connectordemo: DatabaseConfiguration"/>
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8048" doc:name="HTTP Listener Configuration"/>
     
     <flow name="muledemoFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP" allowedMethods="POST"/>
